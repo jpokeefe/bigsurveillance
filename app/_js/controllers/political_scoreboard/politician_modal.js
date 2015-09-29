@@ -13,7 +13,8 @@ var PoliticianModalController = BaseShareModalController.extend({
             positions: this.model.get('score_criteria'),
             name: this.model.get('first_name') +" "+ this.model.get('last_name'),
             bioguide:this.model.get('bioguide'),
-            grade:this.model.get('grade')
+            grade:this.model.get('grade'),
+            image:this.model.get('image')
 
         }));
 

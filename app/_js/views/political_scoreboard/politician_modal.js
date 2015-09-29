@@ -5,6 +5,7 @@ var PoliticianModalView = function (data) {
         title = $c('h2'),
         share = $c('p'),
         grade = $c('h2'),
+        img = $c('img'),
         voteList = $c('ul');
 
     modal.classList.add('modal', 'politician_modal');
@@ -18,8 +19,11 @@ var PoliticianModalView = function (data) {
     grade.textContent = "Grade:" + data.grade
     share.textContent = "Share this with: "+ BASE_URL + data.bioguide +"#scorecard";
 
+    img.src = 'congress/'+data.image
+
     modal.appendChild(close);
     modal.appendChild(title);
+    modal.appendChild(img);
     modal.appendChild(grade);
     modal.appendChild(share);
     console.log(data);

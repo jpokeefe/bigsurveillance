@@ -2,6 +2,9 @@ var TWEET_BLASTER_URL = 'https://tweet-congress.herokuapp.com';
 //var TWEET_BLASTER_URL = 'http://metacube:9000';
 var SPREADSHEET_URL = 'https://spreadsheets.google.com/feeds/list/1rTzEY0sEEHvHjZebIogoKO1qfTez2T6xNj0AScO6t24/default/public/values?alt=json';
 
+
+var CANDIDATE_STATEMENTS_URL = 'https://spreadsheets.google.com/feeds/list/1lA6PkgSh68UudARJSjN2tE786J0l01N2siMWQLqp1KU/default/public/values?alt=json'
+
 var DEFAULT_TWEETS = [
     '#StopCISA—the largest mass surveillance bill since the PATRIOT Act www.decidethefuture.org',
     'please vote to #StopCISA—this bill is bad for cybersecurity and human rights. www.decidethefuture.org',
@@ -68,6 +71,61 @@ var STATES = {
     'WY': 'Wyoming',
 };
 
+var CANDIDATES=[
+{
+    name:"Chris Christie",
+    image:"images/pres_candidates/chris_christie.jpg"
+},
+{
+    name:"Carly Fiorina",
+    image:"images/pres_candidates/carly_fiorina.jpg"
+},
+{
+    name:"Jeb Bush",
+    image:"images/pres_candidates/jeb_bush.jpg"
+},
+{
+    name:"Ben Carson",
+    image:"images/pres_candidates/ben_carson.jpg"
+},
+{
+    name:"Ted Cruz",
+    image:"images/pres_candidates/ted_cruz.jpg"
+},
+{
+    name:"Mike Huckabee",
+    image:"images/pres_candidates/mike_huckabee.jpg"
+},
+{
+    name:"Rand Paul",
+    image:"images/pres_candidates/rand_paul.jpg"
+},
+{
+    name:"Marco Rubio",
+    image:"images/pres_candidates/marco_rubio.jpg"
+},
+{
+    name:"Rick Santorum",
+    image:"images/pres_candidates/rick_santorum.jpg"
+},
+{
+    name:"Donald Trump",
+    image:"images/pres_candidates/donald_trump.jpg"
+},
+{
+    name:"John Kasich",
+    image:"images/pres_candidates/john_kasich.jpg"
+},
+{
+    name:"Hilary Clinton",
+    image:"images/pres_candidates/hilary_clinton.jpg"
+},
+{
+    name:"Bernie Sanders",
+    image:"images/pres_candidates/bernie_sanders.jpg"
+}
+];
+
 var politicians = new Politicians();
 var unfilteredPoliticians = new Politicians();
 var geocode = null;
@@ -106,6 +164,29 @@ xhr2.onreadystatechange = function () {
 };
 xhr2.open("get", 'https://fftf-geocoder.herokuapp.com', true);
 xhr2.send();
+
+var xhr_candidates = new XMLHttpRequest();
+
+xhr_candidates.onreadystatechange= function(){
+    if (xhr_candidates.readyState === 4) {
+        var res = JSON.parse(xhr_candidates.response)
+        for (var i = 0; i < res.feed.entry.length; i++) {
+            var entry = res.feed.entry[i];
+            var can = candidates.findByCandidateName(entry)
+            if(can){
+                can.populateFromGoogle(entry);
+            }
+            else{
+                console.log("candidate not found")
+                console.log(entry)
+            }
+            }
+    // candidates.each(function(m){console.log(m)})
+    }
+}
+//TODO Write handlers to handle the view of the collections
+xhr_candidates.open("get",CANDIDATE_STATEMENTS_URL);
+xhr_candidates.send();
 
 
 

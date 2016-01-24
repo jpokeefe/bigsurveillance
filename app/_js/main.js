@@ -165,6 +165,17 @@ xhr2.onreadystatechange = function () {
 xhr2.open("get", 'https://fftf-geocoder.herokuapp.com', true);
 xhr2.send();
 
+
+//Setup the collection of candidates
+var candidates = new Candidates();
+
+for (var index = 0; index < CANDIDATES.length; index++) {
+    var candidate = new Candidate();
+    candidate.create(CANDIDATES[index]);
+    candidates.add(candidate);
+}
+
+
 var xhr_candidates = new XMLHttpRequest();
 
 xhr_candidates.onreadystatechange= function(){

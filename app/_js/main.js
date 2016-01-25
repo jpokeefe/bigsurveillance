@@ -117,11 +117,15 @@ var CANDIDATES=[
     image:"images/pres_candidates/john_kasich.jpg"
 },
 {
-    name:"Hilary Clinton",
+    name:"Hillary Clinton",
     image:"images/pres_candidates/hilary_clinton.jpg"
 },
 {
     name:"Bernie Sanders",
+    image:"images/pres_candidates/bernie_sanders.jpg"
+},
+{
+    name:"Martin O'Malley",
     image:"images/pres_candidates/bernie_sanders.jpg"
 }
 ];
@@ -183,7 +187,7 @@ xhr_candidates.onreadystatechange= function(){
         var res = JSON.parse(xhr_candidates.response)
         for (var i = 0; i < res.feed.entry.length; i++) {
             var entry = res.feed.entry[i];
-            var can = candidates.findByCandidateName(entry)
+            var can = candidates.findByCandidateEntry(entry)
             if(can){
                 can.populateFromGoogle(entry);
             }
@@ -192,7 +196,13 @@ xhr_candidates.onreadystatechange= function(){
                 console.log(entry)
             }
             }
-    // candidates.each(function(m){console.log(m)})
+        var name_param = util.getParameterByName('candidate');
+        if (name_param) {
+            name_param = name_param.replace("_"," ");
+            var model = candidates.findByCandidateName(name_param);
+            if (model)
+                new CandidateModalController({model: model});
+        }
     }
 }
 //TODO Write handlers to handle the view of the collections

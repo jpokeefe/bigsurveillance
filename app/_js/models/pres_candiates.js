@@ -23,7 +23,7 @@ var Candidate = Composer.Model.extend({
 })
 
 var Candidates = Composer.Collection.extend({
-    findByCandidateName:function(entry){
+    findByCandidateEntry:function(entry){
         var e = function(field) {
             return entry['gsx$'+field]['$t'].trim();
         };
@@ -33,6 +33,11 @@ var Candidates = Composer.Collection.extend({
             return item.get('name') === name;
         });
         return candidate;
-
+    },
+    findByCandidateName:function(name){
+        var candidate = this.find(function(item){
+            return item.get('name') === name;
+        });
+        return candidate;
     }
 });

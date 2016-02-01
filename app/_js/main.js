@@ -200,9 +200,17 @@ xhr_candidates.onreadystatechange= function(){
         if (name_param) {
             name_param = name_param.replace("_"," ");
             var model = candidates.findByCandidateName(name_param);
-            if (model)
+            if (model){
                 new CandidateModalController({model: model});
+            }
         }
+
+        new CandidatesTableController({
+            inject:"#candidates",
+            collection:candidates
+        });
+
+
     }
 }
 //TODO Write handlers to handle the view of the collections

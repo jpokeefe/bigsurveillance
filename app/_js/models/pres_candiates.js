@@ -4,7 +4,8 @@ var Candidate = Composer.Model.extend({
         this.set({
             name:data.name,
             image:data.image,
-            statements:[]
+            statements:[],
+            synopsis:"Waiting..."
         });
     },
 
@@ -17,8 +18,19 @@ var Candidate = Composer.Model.extend({
             return;
             }
         var statements = this.get("statements");
+        var synopsis = e("synopsis");
+        console.log(synopsis);
         statements.push({quote:e("quote"),source:e("source")});
-        this.set({statements: statements});
+        if (synopsis === "" || synopsis === null){
+            this.set({statements: statements});
+        }
+        else{
+            this.set({
+                statements: statements,
+                synopsis: synopsis
+            });
+
+        }
     }
 })
 

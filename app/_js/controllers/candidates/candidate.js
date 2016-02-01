@@ -1,12 +1,12 @@
 var CandidateController = Composer.Controller.extend({
 
     events: {
-        'click button.tweet_link': 'tweet',
-        'click button.info_link': 'info',
-        'click h4': 'tweet',
-        'click .headshot': 'tweet',
-        'click .inline_tweet': 'tweet',
-        'click .peekaboo': 'click'
+        // 'click button.tweet_link': 'tweet',
+        // 'click button.info_link': 'info',
+        // 'click h4': 'tweet',
+        'click .candidate_shot': 'info'
+        // 'click .inline_tweet': 'tweet',
+        // 'click .peekaboo': 'click'
     },
 
     elements: {
@@ -37,9 +37,9 @@ var CandidateController = Composer.Controller.extend({
             handle = '.@' + handle;
         }
 
-        var url = window.location.protocol + '//' + window.location.host + '?candidate=' + this.model.get('name').repalce(" ", "_");
+        var url = window.location.protocol + '//' + window.location.host + '?candidate=' + this.model.get('name').replace(" ", "_");
 
-        var txt = encodeURIComponent(name + ', something something surveillance ' + url);
+        var txt = encodeURIComponent(handle + ', something something surveillance ' + url);
         window.open('https://twitter.com/intent/tweet?text=' + txt);
     },
 

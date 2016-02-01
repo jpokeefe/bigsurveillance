@@ -204,7 +204,6 @@ xhr_candidates.onreadystatechange= function(){
                 new CandidateModalController({model: model});
             }
         }
-
         new CandidatesTableController({
             inject:"#candidates",
             collection:candidates

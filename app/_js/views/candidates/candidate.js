@@ -10,28 +10,15 @@ var CandidateView = function(data) {
         rollover = $c('div');
 
 
-    headshot.classList.add('headshot');
-
-    img.src = "/candidates/"+data.image;
     headshot.appendChild(img);
-
+    img.src = "/candidates/"+data.image;
     div.appendChild(headshot);
-
     name.textContent = data.name;
     div.appendChild(name);
     synopsis.textContent = data.synopsis;
     div.appendChild(synopsis)
+    div.classList.add('candidate_shot');
 
-    rollover.classList.add('rollover');
-
-    tweetLink.classList.add('tweet_link');
-    rollover.appendChild(tweetLink);
-
-    infoLink.classList.add('info_link');
-    infoLink.textContent = 'i';
-    rollover.appendChild(infoLink);
-
-    div.appendChild(rollover);
 
     return div;
 };

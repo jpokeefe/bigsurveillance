@@ -74,59 +74,59 @@ var STATES = {
 var CANDIDATES=[
 {
     name:"Chris Christie",
-    image:"images/pres_candidates/chris_christie.jpg"
+    image:"chris_christie.jpg"
 },
 {
     name:"Carly Fiorina",
-    image:"images/pres_candidates/carly_fiorina.jpg"
+    image:"carly_fiorina.jpg"
 },
 {
     name:"Jeb Bush",
-    image:"images/pres_candidates/jeb_bush.jpg"
+    image:"jeb_bush.jpg"
 },
 {
     name:"Ben Carson",
-    image:"images/pres_candidates/ben_carson.jpg"
+    image:"ben_carson.jpg"
 },
 {
     name:"Ted Cruz",
-    image:"images/pres_candidates/ted_cruz.jpg"
+    image:"ted_cruz.jpg"
 },
 {
     name:"Mike Huckabee",
-    image:"images/pres_candidates/mike_huckabee.jpg"
+    image:"mike_huckabee.jpg"
 },
 {
     name:"Rand Paul",
-    image:"images/pres_candidates/rand_paul.jpg"
+    image:"rand_paul.jpg"
 },
 {
     name:"Marco Rubio",
-    image:"images/pres_candidates/marco_rubio.jpg"
+    image:"marco_rubio.jpg"
 },
 {
     name:"Rick Santorum",
-    image:"images/pres_candidates/rick_santorum.jpg"
+    image:"rick_santorum.jpg"
 },
 {
     name:"Donald Trump",
-    image:"images/pres_candidates/donald_trump.jpg"
+    image:"donald_trump.jpg"
 },
 {
     name:"John Kasich",
-    image:"images/pres_candidates/john_kasich.jpg"
+    image:"john_kasich.jpg"
 },
 {
     name:"Hillary Clinton",
-    image:"images/pres_candidates/hilary_clinton.jpg"
+    image:"hilary_clinton.jpg"
 },
 {
     name:"Bernie Sanders",
-    image:"images/pres_candidates/bernie_sanders.jpg"
+    image:"bernie_sanders.jpg"
 },
 {
     name:"Martin O'Malley",
-    image:"images/pres_candidates/bernie_sanders.jpg"
+    image:"martin_o_malley.jpg"
 }
 ];
 

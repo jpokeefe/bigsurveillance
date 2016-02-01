@@ -2,7 +2,7 @@ var CandidateView = function(data) {
     var
         div = $c('div'),
         headshot = $c('div'),
-        img = $c('i'),            // JL NOTE ~ chrome bug fix, remove after issue is gone
+        img = $c('img'),            // JL NOTE ~ chrome bug fix, remove after issue is gone
         tweetLink = $c('button'),
         infoLink = $c('button'),
         name = $c('h4'),
@@ -12,7 +12,7 @@ var CandidateView = function(data) {
 
     headshot.classList.add('headshot');
 
-    img.classList.add('congressional-head', data.image.replace('.jpg', ''));
+    img.src = "/candidates/"+data.image;
     headshot.appendChild(img);
 
     div.appendChild(headshot);

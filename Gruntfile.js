@@ -53,7 +53,8 @@ module.exports = function (grunt) {
                         src: [
                             'images/**/*',
                             'data/**/*',
-                            'congress/**/*'
+                            'congress/**/*',
+                            'candidates/**/*'
                         ],
                         dest: '<%= site.dist %>'
                     }

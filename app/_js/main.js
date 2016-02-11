@@ -73,14 +73,6 @@ var STATES = {
 
 var CANDIDATES=[
 {
-    name:"Chris Christie",
-    image:"chris_christie.jpg"
-},
-{
-    name:"Carly Fiorina",
-    image:"carly_fiorina.jpg"
-},
-{
     name:"Jeb Bush",
     image:"jeb_bush.jpg"
 },
@@ -93,20 +85,8 @@ var CANDIDATES=[
     image:"ted_cruz.jpg"
 },
 {
-    name:"Mike Huckabee",
-    image:"mike_huckabee.jpg"
-},
-{
-    name:"Rand Paul",
-    image:"rand_paul.jpg"
-},
-{
     name:"Marco Rubio",
     image:"marco_rubio.jpg"
-},
-{
-    name:"Rick Santorum",
-    image:"rick_santorum.jpg"
 },
 {
     name:"Donald Trump",
@@ -127,6 +107,26 @@ var CANDIDATES=[
 {
     name:"Martin O'Malley",
     image:"martin_o_malley.jpg"
+},
+{
+    name:"Rand Paul",
+    image:"rand_paul.jpg"
+},
+{
+    name:"Chris Christie",
+    image:"chris_christie.jpg"
+},
+{
+    name:"Carly Fiorina",
+    image:"carly_fiorina.jpg"
+},
+{
+    name:"Rick Santorum",
+    image:"rick_santorum.jpg"
+},
+{
+    name:"Mike Huckabee",
+    image:"mike_huckabee.jpg"
 }
 ];
 

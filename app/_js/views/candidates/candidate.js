@@ -1,5 +1,6 @@
 var CandidateView = function(data) {
     var
+        a = $c('a'),
         div = $c('div'),
         headshot = $c('div'),
         img = $c('img'),            // JL NOTE ~ chrome bug fix, remove after issue is gone
@@ -18,7 +19,8 @@ var CandidateView = function(data) {
     synopsis.textContent = data.synopsis;
     div.appendChild(synopsis)
     div.classList.add('candidate_shot');
-
-
-    return div;
+    a.href=""
+    a.appendChild(div)
+    a.classList.add('clickable')
+    return a;
 };
